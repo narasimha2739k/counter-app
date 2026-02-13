@@ -1,29 +1,30 @@
 let count = 0;
 
 const countDisplay = document.getElementById("count");
-const increaseBtn = document.getElementById("increase");
-const decreaseBtn = document.getElementById("decrease");
+const plusBtn = document.getElementById("plus");
+const minusBtn = document.getElementById("minus");
 
-function updateDisplay(){
+function updateDisplay() {
     countDisplay.textContent = count;
 
-    if(count >= 10){
-        increaseBtn.disabled = true;
-    } else {
-        increaseBtn.disabled = false;
-    }
+    // Disable buttons at limits
+    plusBtn.disabled = count === 10;
+    minusBtn.disabled = count === 0;
 }
 
-increaseBtn.addEventListener("click", () => {
-    if(count < 10){
+plusBtn.addEventListener("click", () => {
+    if (count < 10) {
         count++;
         updateDisplay();
     }
 });
 
-decreaseBtn.addEventListener("click", () => {
-    count--;
-    updateDisplay();
+minusBtn.addEventListener("click", () => {
+    if (count > 0) {
+        count--;
+        updateDisplay();
+    }
 });
 
+// initialize state
 updateDisplay();
