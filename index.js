@@ -4,27 +4,29 @@ const countDisplay = document.getElementById("count");
 const plusBtn = document.getElementById("plus");
 const minusBtn = document.getElementById("minus");
 
-function updateDisplay() {
+function updateUI() {
     countDisplay.textContent = count;
 
-    // Disable buttons at limits
-    plusBtn.disabled = count === 10;
+    // disable minus at 0
     minusBtn.disabled = count === 0;
+
+    // disable plus at 10
+    plusBtn.disabled = count === 10;
 }
 
 plusBtn.addEventListener("click", () => {
     if (count < 10) {
         count++;
-        updateDisplay();
+        updateUI();
     }
 });
 
 minusBtn.addEventListener("click", () => {
     if (count > 0) {
         count--;
-        updateDisplay();
+        updateUI();
     }
 });
 
-// initialize state
-updateDisplay();
+// initialize button state
+updateUI();
