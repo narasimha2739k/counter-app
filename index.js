@@ -21,11 +21,11 @@ plusBtn.addEventListener("click", () => {
     }
 });
 
-/*minusBtn.addEventListener("click", () => {
+minusBtn.addEventListener("click", () => {
     if (count > 0) {
         count--;
         updateUI();
-    }*/
+    }
 });
 
 updateUI();
