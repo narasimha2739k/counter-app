@@ -7,7 +7,7 @@ const minusBtn = document.getElementById("minus");
 function updateUI() {
     countDisplay.textContent = count;
 
-    // disable minus at 0
+    
     minusBtn.disabled = count === 0;
 
     // disable plus at 10
@@ -21,12 +21,11 @@ plusBtn.addEventListener("click", () => {
     }
 });
 
-minusBtn.addEventListener("click", () => {
+/*minusBtn.addEventListener("click", () => {
     if (count > 0) {
         count--;
         updateUI();
-    }
+    }*/
 });
 
-// initialize button state
 updateUI();
